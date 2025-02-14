@@ -1,21 +1,20 @@
 // Debugging in C++ with Visual Studio Code
-// Exercise 02_03
-// Reporting Code Coverage, by Eduardo Corpeño
+// Exercise 03_03
+// Breakpoints, by Eduardo Corpeño
 
 #include <iostream>
 
 class Battery{
 public:
     Battery(double capacity, double normalDrain, double lowPowerDrain)
-    : charge(capacity), normalDrain(lowPowerDrain), lowPowerDrain(lowPowerDrain) {}
+    : charge(capacity), normalDrain(normalDrain), lowPowerDrain(lowPowerDrain) {}
 
     void simulateUsage(int hours){
         for(int i = 1; i <= hours; i++){
-            std::cout << "Charge: " << charge << "%" << std::endl;
             if(charge > 20)
                 charge -= normalDrain;  // Normal power usage
             else
-                charge -= lowPowerDrain; // Reduced drain in power-saving mode
+                charge - lowPowerDrain; // Reduced drain in power-saving mode
 
             if(charge < 0) charge = 0; // Prevent negative charge
         }

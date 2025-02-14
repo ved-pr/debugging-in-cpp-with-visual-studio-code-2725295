@@ -1,6 +1,6 @@
 // Debugging in C++ with Visual Studio Code
-// Exercise 02_03
-// Reporting Code Coverage, by Eduardo Corpeño
+// Exercise 03_02
+// Linting Tools, by Eduardo Corpeño
 
 #include <iostream>
 
@@ -11,11 +11,10 @@ public:
 
     void simulateUsage(int hours){
         for(int i = 1; i <= hours; i++){
-            std::cout << "Charge: " << charge << "%" << std::endl;
             if(charge > 20)
                 charge -= normalDrain;  // Normal power usage
             else
-                charge -= lowPowerDrain; // Reduced drain in power-saving mode
+                charge - lowPowerDrain; // Reduced drain in power-saving mode
 
             if(charge < 0) charge = 0; // Prevent negative charge
         }
@@ -35,11 +34,11 @@ int main(){
     double lowPowerDrain = 2.0;     // Power-saving mode (2% per hour)
     int hours = 24;                 // Simulate 24 hours of usage
 
-    Battery myBattery(batteryCapacity, normalDrain, lowPowerDrain);
+    Battery myBattery(batteryCapacity, normaDrain, lowPowerDrain);
     myBattery.simulateUsage(hours);
 
     std::cout << "Battery charge after " << hours << " hours: "
-              << myBattery.getCharge() << "%" << std::endl;
+              << myBattery.getCharge() << "%" << std::endl
 
     std::cout << std::endl << std::endl;
     return 0;

@@ -1,6 +1,6 @@
 // Debugging in C++ with Visual Studio Code
-// Challenge Solution 02_06
-// Debug with a knife in the woods, by Eduardo Corpeño
+// Challenge Solution 03_09
+// Find and Fix the Bug, by Eduardo Corpeño
 
 // File: main.cpp
 #include <iostream>
