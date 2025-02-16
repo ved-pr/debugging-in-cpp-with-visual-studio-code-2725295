@@ -1,6 +1,6 @@
 // Debugging in C++ with Visual Studio Code
 // Exercise 03_02
-// Linting Tools, by Eduardo Corpeño
+// Linting, by Eduardo Corpeño
 
 #include <iostream>
 

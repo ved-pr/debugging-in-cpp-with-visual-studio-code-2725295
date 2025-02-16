@@ -1,6 +1,6 @@
 // Debugging in C++ with Visual Studio Code
 // Exercise 06_01
-// CPU Registers, by Eduardo Corpeño
+// Registers View, by Eduardo Corpeño
 
 #include <iostream>
 #include <sstream>
