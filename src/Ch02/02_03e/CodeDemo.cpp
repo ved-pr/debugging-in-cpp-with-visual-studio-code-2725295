@@ -5,6 +5,11 @@
 #include <iostream>
 
 class Battery{
+private:
+    double charge;
+    double normalDrain;
+    double lowPowerDrain;
+    
 public:
     Battery(double capacity, double normalDrain, double lowPowerDrain)
     : charge(capacity), normalDrain(normalDrain), lowPowerDrain(lowPowerDrain) {}
@@ -13,11 +18,12 @@ public:
         for(int i = 1; i <= hours; i++){
             std::cout << "Charge: " << charge << "%" << std::endl;
             if(charge > 20){
-                charge -= normalDrain;  // Normal power usage
                 std::cout << "Normal power mode." << std::endl;
-            } else{
-                charge -= lowPowerDrain; // Reduced drain in power-saving mode
+                charge -= normalDrain;  // Normal power usage
+            } 
+            else{
                 std::cout << "Low power mode." << std::endl;
+                charge -= lowPowerDrain; // Reduced drain in power-saving mode
             }
 
             if(charge < 0) charge = 0; // Prevent negative charge
@@ -25,11 +31,6 @@ public:
     }
 
     double getCharge() const { return charge; }
-
-private:
-    double charge;
-    double normalDrain;
-    double lowPowerDrain;
 };
 
 int main(){

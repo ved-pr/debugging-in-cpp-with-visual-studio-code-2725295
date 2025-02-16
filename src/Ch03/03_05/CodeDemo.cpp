@@ -5,6 +5,11 @@
 #include <iostream>
 
 class Battery{
+private:
+    double charge;
+    double normalDrain;
+    double lowPowerDrain;
+    
 public:
     Battery(double capacity, double normalDrain, double lowPowerDrain)
     : charge(capacity), normalDrain(normalDrain), lowPowerDrain(lowPowerDrain) {}
@@ -21,11 +26,6 @@ public:
     }
 
     double getCharge() const { return charge; }
-
-private:
-    double charge;
-    double normalDrain;
-    double lowPowerDrain;
 };
 
 int main(){

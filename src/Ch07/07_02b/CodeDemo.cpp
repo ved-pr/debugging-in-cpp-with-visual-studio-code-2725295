@@ -24,7 +24,6 @@ int main(){
             case '-': std::cout << "Result: " << num1 - num2 << std::endl; break;
             case '*': std::cout << "Result: " << num1 * num2 << std::endl; break;
             case '/': std::cout << "Result: " << num1 / num2 << std::endl; break;
-            default: std::cout << "Invalid operator!" << std::endl;
         }
     }
     return 0;

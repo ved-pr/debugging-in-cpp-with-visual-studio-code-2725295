@@ -33,7 +33,8 @@ int main(){
             case '-': std::cout << "Result: " << num1 - num2 << std::endl; break;
             case '*': std::cout << "Result: " << num1 * num2 << std::endl; break;
             case '/': std::cout << "Result: " << num1 / num2 << std::endl; break;
-            default: std::cerr << "Error: Invalid operator!" << std::endl; exit(EXIT_FAILURE);
+            default: std::cerr << "Error: Invalid operator!" << std::endl;
+                     exit(EXIT_FAILURE);
         }
     }
 }
