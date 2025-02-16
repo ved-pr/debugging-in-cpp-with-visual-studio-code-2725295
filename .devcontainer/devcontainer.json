@@ -21,7 +21,7 @@
 				"ms-vscode.cpptools",
 				"ms-vscode.cmake-tools",
 				"ms-vscode.cpptools-extension-pack",
-                "mcu-debug.memory-view"
+				"mcu-debug.memory-view"
 			]
 		}
 	},
