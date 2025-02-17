@@ -54,7 +54,7 @@ int main(){
     std::cin >> tip;
     
     // Syntax error: missing opening curly bracket for the if statement's true branch.
-    if(numPeople > 1)
+    if(numPeople > 2)
         std::cout << std::endl << "Group discounts may apply!" << std::endl;
     } // Erroneous extra closing curly bracket
     
