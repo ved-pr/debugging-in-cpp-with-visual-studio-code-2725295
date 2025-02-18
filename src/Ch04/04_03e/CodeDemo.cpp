@@ -22,8 +22,8 @@ double computeTotal(double bill, int people, double tipPercentage){
 }
 
 // Semantic error: Function declared to return int but returns a string literal.
-std::string getBonusOffer(std::string discount){
-    return discount + " off on your next visit."; // Wrong return type.
+std::string getBonusOffer(){
+    return "20% off on your next visit."; // Wrong return type.
 }
 
 // Print a message when the split is not even
@@ -71,13 +71,9 @@ int main(){
     
     // Semantic error: Wrong number of arguments (3 expected but only 2 are provided).
     printUnevenSplit(totalBill, perPerson, numPeople);
-        
-    // Semantic error: Wrong type assignment (assigning a string literal to a double).
-    // Semantic error: Redefinition of a variable in the same scope.
-    std::string discount = "20%"; // a discount for the bonus offer
 
     // Logical error: bonus should be a string
-    std::string bonus = getBonusOffer(discount);
+    std::string bonus = getBonusOffer();
     std::cout << "Bonus offer: " << bonus << std::endl;
     
     // Linker error: Call to an external function that is declared but not defined.
