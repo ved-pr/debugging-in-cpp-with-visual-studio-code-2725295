@@ -53,10 +53,10 @@ int main(){
     std::cout << "Enter tip percentage: ";
     std::cin >> tip;
     
-    // Syntax error: missing opening curly bracket for the if statement's true branch.
+    // Syntax error: missing opening curly brace for the if statement's true branch.
     if(numPeople > 2)
         std::cout << std::endl << "Group discounts may apply!" << std::endl;
-    // } // Erroneous extra closing curly bracket
+    // } // Erroneous extra closing curly brace
     
     // Semantic error: Declaration with auto without an initializer.
     auto totalBill;
