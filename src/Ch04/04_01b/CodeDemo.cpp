@@ -73,7 +73,7 @@ int main(){
     printUnevenSplit(totalBill, perPerson);
         
     // Logical error: bonus should be a string
-    int bonus = getBonusOffer();
+    std::string bonus = getBonusOffer();
     std::cout << "Bonus offer: " << bonus << std::endl;
     
     // Linker error: Call to an external function that is declared but not defined.
