@@ -18,7 +18,7 @@ void externalPromotion();
 double computeTotal(double bill, int people, double tipPercentage){
     double tipAmount = bill * (tipPercentage / 100);
     double discount = globalDiscount; // Flat discount applied to the bill.
-    return bill + tipAmount - discount;
+    return std::round((bill + tipAmount - discount) * 100.0) / 100.0;
 }
 
 // Semantic error: Function declared to return int but returns a string literal.
@@ -46,7 +46,7 @@ int main(){
 
     std::cout << "===== Bill Split Calculator =====" << std::endl << std::endl;
     
-    std::cout << "Enter total bill amount: ";
+    std::cout << "Enter bill amount: $";
     std::cin >> billAmount;
     std::cout << "Enter number of people: ";
     std::cin >> numPeople;
@@ -63,7 +63,7 @@ int main(){
     totalBill = computeTotal(billAmount, numPeople, tip);
     double perPerson = std::round((totalBill / numPeople) * 100.0) / 100.0;
 
-    std::cout << std::endl;
+    std::cout << std::endl << "Grand Total: $" << totalBill << std::endl;
     
     // Semantic error: Use of an undefined variable.
     std::cout << "Each person should pay: $" << std::fixed 
