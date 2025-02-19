@@ -28,7 +28,7 @@ int getBonusOffer(){
 
 // Print a message when the split is not even
 void printUnevenSplit(double totalBill, double perPerson, int numPeople){
-    int diff = ((perPerson * numPeople) - totalBill) * 100;
+    int diff = std::round(((perPerson * numPeople) - totalBill) * 100);
     if(diff > 0)
         // Syntax error: missing semicolon after the output statement.
         std::cout << "FYI: We are " << diff << "¢ over." << std::endl
