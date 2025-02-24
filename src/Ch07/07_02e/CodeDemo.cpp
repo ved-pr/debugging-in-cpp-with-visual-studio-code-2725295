@@ -11,7 +11,7 @@ int main(){
     int num1, num2;
 
     while(true){
-        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: ";
+        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: " << std::flush;
         std::string input;
         std::getline(std::cin, input);
 
@@ -19,12 +19,12 @@ int main(){
 
         std::istringstream iss(input);
         if(!(iss >> num1 >> op >> num2)){
-            std::cerr << "Error: Invalid input format!" << std::endl;
+            std::cerr << "Error: Invalid input format!" << std::endl << std::endl;
             exit(EXIT_FAILURE);
         }
 
         if(op == '/' && num2 == 0){
-            std::cerr << "Error: Division by zero!" << std::endl;
+            std::cerr << "Error: Division by zero!" << std::endl << std::endl;
             exit(EXIT_FAILURE);
         }
 
@@ -33,8 +33,9 @@ int main(){
             case '-': std::cout << "Result: " << num1 - num2 << std::endl; break;
             case '*': std::cout << "Result: " << num1 * num2 << std::endl; break;
             case '/': std::cout << "Result: " << num1 / num2 << std::endl; break;
-            default: std::cerr << "Error: Invalid operator!" << std::endl;
-                     exit(EXIT_FAILURE);
+            default: 
+                std::cerr << "Error: Invalid operator!" << std::endl << std::endl;
+                exit(EXIT_FAILURE);
         }
     }
 }

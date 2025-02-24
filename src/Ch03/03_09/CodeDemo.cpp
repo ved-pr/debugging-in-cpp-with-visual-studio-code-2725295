@@ -2,53 +2,27 @@
 // Challenge Solution 03_09
 // Find and Fix the Bug, by Eduardo Corpeño
 
-// File: main.cpp
 #include <iostream>
-#include "lib.h" // Include the header file for the linker error example
+#include <limits>
+#include <vector>
 
-// Added Linker Error: Redefinition of 'sharedVar' across files
-int sharedVar = 100; // Error: Redefinition of 'sharedVar', already defined in 'variables.h'
+using std::vector;
 
-
-extern void undefinedFunction(); // Error: Undefined reference to 'undefinedFunction'
-
-// Function declaration
-void printMessage(int value);
+int findLargest(const vector<int>& numbers){
+    int largest = std::numeric_limits<int>::min();
+    for (auto it = std::begin(numbers); it < std::end(numbers); it++){
+        if (*it > largest)
+            largest = *it;
+    }
+    return largest;
+}
 
 int main(){
-    // Syntax Errors
-    std::cout << "This line is missing a semicolon" // Error: Syntax error, expected ';'
-
-    int x = 10;
-    int x = 20; // Error: Redefinition of 'x' (this is a semantic error, not syntax; explanation below)
-
-    // Added Syntax Error: Mismatched parentheses
-    if(x > 0) {// Error: Missing opening brace
-      std::cout << "Positive number";
-    }
-    else{
-        std::cout << "Positive number";
-    }
-
-    // Semantic Errors
-    int age = "twenty-five"; // Error: Incompatible type assignment
-
-    printMessage(); // Error: Wrong number of arguments passed to a function
-
-    auto num; // Error: 'num' is declared with 'auto' but not initialized
-
-    int& ref; // Error: Uninitialized reference variable
-
-    y = age * 2; // Error: 'y' is not declared in this scope
-
-    undefinedFunction(); // Linker error: No definition provided for 'undefinedFunction'
-
-    return "success"; // Error: Incompatible return type, expected 'int'
+    vector<int> numbers = {7, 27, 0, -19, 5, 20};
+    int learnerResult = findLargest(numbers);
     
+    std::cout << "Your code returned: " << learnerResult << std::endl;
+    
+    std::cout << std::endl << std::endl;
+    return 0;
 }
-
-// Function definition
-void printMessage(int value){
-    std::cout << "Value: " << value << std::endl;
-}
-

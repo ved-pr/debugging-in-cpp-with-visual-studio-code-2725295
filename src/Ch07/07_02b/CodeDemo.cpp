@@ -10,7 +10,7 @@ int main(){
     int num1, num2;
 
     while(true){
-        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: ";
+        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: " << std::flush;
         std::string input;
         std::getline(std::cin, input);
 
@@ -26,5 +26,6 @@ int main(){
             case '/': std::cout << "Result: " << num1 / num2 << std::endl; break;
         }
     }
+    std::cout << std::endl << std::endl;
     return 0;
 }
