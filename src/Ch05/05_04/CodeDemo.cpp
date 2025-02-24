@@ -1,74 +1,25 @@
 // Debugging in C++ with Visual Studio Code
-// Exercise 05_01
-// Segmentation Faults, by Eduardo Corpeño
+// Challenge 05_04
+// Don't Let it Crash and Burn, by Eduardo Corpeño
 
 #include <iostream>
-#include <sstream>
-#include <string>
 
-#define MAX_ENTRIES 1000
-
-struct Node{
-    std::string name;
-    int age;
-    char gender;
-    float weight;
-    Node * next;
-};
-
-void appendNode(Node ** head, Node ** tail, const std::string & newName){
-    Node * newNode = new Node;
-    newNode->name = newName;
-    newNode->next = nullptr;
-    head[MAX_ENTRIES] = nullptr;
-    tail = nullptr;
-    if(*head == nullptr){
-        *head = newNode;
-        *tail = newNode;
-    }
-    else{
-        (*tail)->next = newNode;
-        *tail = newNode;
-    }
-}
-
-void printNames(Node * head){
-    Node * current = head;
-    while(current != nullptr){
-        std::cout << current->name << " ";
-        current = current->next;
-    }
-    std::cout << std::endl;
-}
-
-void deleteList(Node * head){
-    while(head != nullptr){
-        Node * temp = head;
-        head = head->next;
-        delete temp;
-    }
+double power(double base, int exponent){
+    double result, *x = nullptr;
+    if(exponent == 0) 
+        result = 1;
+    result = base * power(base, exponent - 1);
+    return *x;
 }
 
 int main(){
-    std::cout << "Enter names separated by spaces: ";
-    std::string line;
-    std::getline(std::cin, line);
+    double base = 2;
+    int exponent = 8;
     
-    std::istringstream iss(line);
-    std::string token;
+    double learnerResult = power(base, exponent);
     
-    Node * head = nullptr;
-    Node * tail = nullptr;
-    while(iss >> token){
-        appendNode(&head, &tail, token);
-        iss.clear();
-        iss.seekg(0, std::ios::beg);
-    }
+    std::cout << "Your code returned: " << learnerResult << std::endl;
     
-    std::cout << "The names in the linked list are: ";
-    printNames(head);
-    
-    deleteList(head);
     std::cout << std::endl << std::endl;
     return 0;
 }

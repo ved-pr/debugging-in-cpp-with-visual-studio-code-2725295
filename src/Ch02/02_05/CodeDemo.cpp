@@ -3,14 +3,24 @@
 // Debug with a knife in the woods, by Eduardo Corpeño
 
 #include <iostream>
-#include <string>
+#include <vector>
+
+using std::vector;
+
+double average(const vector<double>& numbers){
+    double sum = 0;
+    for(auto it = std::begin(numbers); it != std::end(numbers) - 1; ++it){
+        sum = *it;
+    }
+    return sum / numbers.size();
+}
 
 int main(){
-    int x = 8;
-    std::string str = "Hello there!";
-    int x = 7;
-    std::cout << x << "HEYYYY" << std::endl;
-    x = str;
+    vector<double> numbers = {20, 10, 30, 27, 18};
+    double learnerResult = average(numbers);
+    
+    std::cout << "Your code returned: " << learnerResult << std::endl;
+    
     std::cout << std::endl << std::endl;
     return 0;
 }
