@@ -11,7 +11,7 @@ int main(){
     int num1, num2;
 
     while(true){
-        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: ";
+        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: " << std::flush;
         std::string input;
         std::getline(std::cin, input);
 
@@ -23,7 +23,9 @@ int main(){
             continue;
         }
 
-        assert((op == '+' || op == '-' || op == '*' || op == '/') && "Error: Invalid operator!");
+        assert((op == '+' || op == '-' || op == '*' || op == '/') 
+                && "Error: Invalid operator!");
+                
         assert(!(op == '/' && num2 == 0) && "Error: Division by zero!");
 
         switch(op){
@@ -33,5 +35,6 @@ int main(){
             case '/': std::cout << "Result: " << num1 / num2 << std::endl; break;
         }
     }
+    std::cout << std::endl << std::endl;
     return 0;
 }

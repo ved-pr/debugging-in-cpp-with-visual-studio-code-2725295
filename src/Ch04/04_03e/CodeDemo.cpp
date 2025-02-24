@@ -1,5 +1,5 @@
 // Debugging in C++ with Visual Studio Code
-// Exercise 04_03 with modifications
+// Exercise 04_03
 // Linker Errors, by Eduardo Corpeño
 
 #include <iostream>

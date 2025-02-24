@@ -11,7 +11,7 @@ int main(){
     int num1, num2;
 
     while(true){
-        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: ";
+        std::cout << "Enter an expression (like 5 + 3) or 'q' to quit: " << std::flush;
         std::string input;
         std::getline(std::cin, input);
 
@@ -34,9 +34,11 @@ int main(){
                 case '/': std::cout << "Result: " << num1 / num2 << std::endl; break;
                 default: throw std::invalid_argument("Error: Invalid operator!");
             }
-        } catch(const std::exception& e){
+        } 
+        catch(const std::exception& e){
             std::cerr << e.what() << " Try again." << std::endl;
         }
     }
+    std::cout << std::endl << std::endl;
     return 0;
 }
